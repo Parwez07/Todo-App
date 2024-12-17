@@ -18,6 +18,7 @@ public class TaskController {
 
     @PostMapping("/task")
     public ResponseEntity<?> addTask(@RequestBody Task task){
+        System.out.println(task.getTitle());
         return  new ResponseEntity<>(service.addTask(task), HttpStatus.CREATED);
     }
     @GetMapping("/task")
